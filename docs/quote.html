@@ -290,29 +290,33 @@
         <h1 style="font-family: 'Saira Condensed', sans-serif; font-size: clamp(36px, 6vw, 52px); font-weight: 700; margin-bottom: 16px; line-height: 1.1;">Get Your Free Quote</h1>
         <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin: 0 auto;">Tell us about your vehicle and what it needs. We'll text you back with a price and available times — usually the same day. Prefer to skip the form? Text 513-444-9924 directly.</p>
       </div>
-      <form class="quote-form" name="quote" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company-website">
-        <input type="hidden" name="form-name" value="quote">
-        <p class="hp"><label>Leave this empty <input name="company-website" tabindex="-1" autocomplete="off"></label></p>
+      <form class="quote-form" name="quote" method="POST" action="https://api.web3forms.com/submit">
+                <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New quote request from detlingsdetailing.com">
+        <input type="hidden" name="from_name" value="Detling's Detailing website">
+        <input type="hidden" name="redirect" value="https://detlingsdetailing.com/thanks.html">
+        <input type="hidden" name="Service Wanted" id="service_joined">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row">
-          <div><label for="first_name">First Name <span class="req">*</span></label><input type="text" id="first_name" name="first_name" placeholder="Enter your first name" autocomplete="given-name" required></div>
-          <div><label for="last_name">Last Name <span class="req">*</span></label><input type="text" id="last_name" name="last_name" placeholder="Enter your last name" autocomplete="family-name" required></div>
+          <div><label for="first_name">First Name <span class="req">*</span></label><input type="text" id="first_name" name="First Name" placeholder="Enter your first name" autocomplete="given-name" required></div>
+          <div><label for="last_name">Last Name <span class="req">*</span></label><input type="text" id="last_name" name="Last Name" placeholder="Enter your last name" autocomplete="family-name" required></div>
         </div>
         <div class="row">
-          <div><label for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required></div>
+          <div><label for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required></div>
           <div><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
         </div>
         <fieldset>
           <legend>Service Wanted <span class="req">*</span></legend>
           <div class="choices">
-            <label class="choice"><input type="checkbox" name="service[]" value="Full Detail"> Full Detail</label>
-            <label class="choice"><input type="checkbox" name="service[]" value="Interior"> Interior</label>
-            <label class="choice"><input type="checkbox" name="service[]" value="Exterior"> Exterior</label>
+            <label class="choice"><input type="checkbox" class="svc" value="Full Detail"> Full Detail</label>
+            <label class="choice"><input type="checkbox" class="svc" value="Interior"> Interior</label>
+            <label class="choice"><input type="checkbox" class="svc" value="Exterior"> Exterior</label>
           </div>
           <p class="error" id="service-error">Pick at least one service.</p>
         </fieldset>
         <div>
           <label for="vehicle_type">Vehicle Type <span class="req">*</span></label>
-          <select id="vehicle_type" name="vehicle_type" required>
+          <select id="vehicle_type" name="Vehicle Type" required>
             <option value="" disabled selected>Pick One</option>
             <option>Coupe/Sedan</option>
             <option>SUV (2 Rows)</option>
@@ -323,23 +327,24 @@
         </div>
         <div>
           <label for="condition">Tell Us A Little About The Condition Of Your Vehicle</label>
-          <textarea id="condition" name="condition" placeholder="E.g., Excessive pet hair, heavy stains, caked on mud, etc."></textarea>
+          <textarea id="condition" name="Vehicle Condition" placeholder="E.g., Excessive pet hair, heavy stains, caked on mud, etc."></textarea>
         </div>
         <div>
           <label for="postal_code">Postal Code <span class="req">*</span></label>
-          <input type="text" id="postal_code" name="postal_code" placeholder="ZIP or postal code" inputmode="numeric" autocomplete="postal-code" required>
+          <input type="text" id="postal_code" name="Postal Code" placeholder="ZIP or postal code" inputmode="numeric" autocomplete="postal-code" required>
         </div>
-        <label class="consent"><input type="checkbox" name="sms_consent_transactional" value="yes"> <span>By checking this box, I consent to receive non-marketing text messages from <strong>Detling's Detailing LLC</strong> at the phone number provided. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
-        <label class="consent"><input type="checkbox" name="sms_consent_marketing" value="yes"> <span>By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new service updates among others, from <strong>Detling's Detailing LLC</strong> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
+        <label class="consent"><input type="checkbox" name="SMS consent (non-marketing)" value="yes"> <span>By checking this box, I consent to receive non-marketing text messages from <strong>Detling's Detailing LLC</strong> at the phone number provided. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
+        <label class="consent"><input type="checkbox" name="SMS consent (marketing)" value="yes"> <span>By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new service updates among others, from <strong>Detling's Detailing LLC</strong> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
         <button type="submit" class="btn btn-red">Submit</button>
         <p class="legal"><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
       </form>
       <script>
         document.querySelector('form[name=quote]').addEventListener('submit', function (e) {
-          var picked = this.querySelectorAll('input[name="service[]"]:checked').length;
+          var picked = Array.prototype.map.call(this.querySelectorAll('.svc:checked'), function (c) { return c.value; });
           var err = document.getElementById('service-error');
-          if (!picked) { e.preventDefault(); err.style.display = 'block'; this.querySelector('input[name="service[]"]').focus(); }
-          else { err.style.display = 'none'; }
+          if (!picked.length) { e.preventDefault(); err.style.display = 'block'; this.querySelector('.svc').focus(); return; }
+          err.style.display = 'none';
+          document.getElementById('service_joined').value = picked.join(', ');
         });
       </script>
     </div>
