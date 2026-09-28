@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exterior Detailing & Hand Wash in Cincinnati | Detling's</title>
+  <meta name="description" content="Two-bucket hand wash or full exterior detail with clay bar, iron decon & 6-month ceramic protection — done in your driveway across Cincinnati & NKY.">
+  <link rel="canonical" href="https://detlingsdetailing.com/exterior-detailing.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://vibe.filesafe.space/meta/1782875371920744797/favicon.png">
+
+  <style>
+    :root {
+      --ink: #0B0B0C;
+      --ink-2: #0F0F11;
+      --surface: #161618;
+      --surface-2: #1B1B1F;
+      --line: #2A2A2F;
+      --line-2: #3A3A41;
+      --red: #E24B4A;
+      --red-bright: #EC5A59;
+      --white: #F6F6F7;
+      --muted: #ABABB2;
+      --muted-2: #76767D;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--ink); color: var(--white); font-family: 'Barlow', sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; padding-bottom: env(safe-area-inset-bottom); display: flex; flex-direction: column; min-height: 100vh; }
+    
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3, .eyebrow, .btn, .nav-links a { font-family: 'Saira Condensed', sans-serif; }
+    
+    .h2 { font-weight: 700; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .lead { color: var(--muted); font-size: clamp(16px, 2.4vw, 19px); max-width: 62ch; margin-bottom: 40px; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .text-red { color: var(--red); }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 0.045em; font-weight: 700; font-size: 16px; padding: 16px 26px; border-radius: 11px; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; gap: 8px; }
+    .btn-red { background: linear-gradient(to bottom, var(--red-bright), var(--red)); color: var(--white); box-shadow: 0 4px 14px rgba(226, 75, 74, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+    .btn-red:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(226, 75, 74, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+    .btn-ghost { background: rgba(255, 255, 255, 0.03); color: var(--white); border: 1px solid var(--line-2); }
+    .btn-ghost:hover { border-color: var(--red); background: rgba(226, 75, 74, 0.05); }
+
+    header { position: sticky; top: 0; z-index: 100; background: rgba(11, 11, 12, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 84px; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .brand { font-size: 24px; font-weight: 800; text-decoration: none; color: var(--white); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { color: var(--white); text-decoration: none; font-weight: 600; font-size: 16px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    
+    footer { background: var(--ink-2); border-top: 1px solid var(--line); padding: 64px 24px 32px; margin-top: auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; max-width: 1140px; margin: 0 auto 64px; }
+    .footer-col h4 { font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+    .footer-col p, .footer-col a { color: var(--muted); margin-bottom: 12px; display: block; text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { max-width: 1140px; margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; color: var(--muted-2); font-size: 14px; }
+
+    .menu-toggle { display: none; background: none; border: none; color: var(--white); cursor: pointer; }
+
+    /* Page specific */
+    .hero-section { padding: 120px 0 80px; position: relative; }
+    .hero-glow { position: absolute; top: 160px; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(226,75,74,0.15) 0%, rgba(11,11,12,0) 70%); z-index: -2; }
+    
+    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .comparison-table th, .comparison-table td { padding: 16px 24px; text-align: left; border-bottom: 1px solid var(--line); }
+    .comparison-table th { font-family: 'Saira Condensed', sans-serif; font-size: 20px; font-weight: 700; background: var(--surface-2); }
+    .comparison-table th:nth-child(2), .comparison-table td:nth-child(2) { text-align: center; }
+    .comparison-table th:nth-child(3), .comparison-table td:nth-child(3) { text-align: center; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table .highlight { color: var(--red); font-family: 'Saira Condensed', sans-serif; font-size: 24px; }
+
+    .faq-item { margin-bottom: 32px; }
+    .faq-item h3 { font-size: 22px; margin-bottom: 8px; }
+    .faq-item p { color: var(--muted); }
+
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .gallery-img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+    @media (min-width: 861px) { .gallery-img { max-width: 600px; margin: 0 auto; display: block; } }
+    .slider-container { position: relative; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); --pos: 50; max-width: 600px; margin: 0 auto; }
+    .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -o-object-fit: cover; object-fit: cover; }
+    .slider-after { clip-path: inset(0 0 0 calc(var(--pos) * 1%)); }
+    .slider-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 10; }
+    .slider-divider { position: absolute; top: 0; bottom: 0; left: calc(var(--pos) * 1%); width: 2px; background: var(--red); transform: translateX(-50%); pointer-events: none; z-index: 5; }
+    .slider-grip { position: absolute; top: 50%; left: calc(var(--pos) * 1%); transform: translate(-50%, -50%); width: 40px; height: 40px; background: var(--red); border: 2px solid var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 5; }
+    .slider-tag { position: absolute; font-family: 'Saira Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 12px; padding: 4px 10px; border-radius: 4px; z-index: 5; letter-spacing: 0.05em; }
+    .tag-before { top: 16px; left: 16px; background: rgba(11,11,12,0.8); backdrop-filter: blur(4px); color: var(--white); }
+    .tag-after { top: 16px; right: 16px; background: var(--red); color: var(--white); }
+
+    .bg-red-tint {
+      background: radial-gradient(circle at top, rgba(226,75,74,0.05) 0%, var(--ink) 100%);
+      border-top: 1px solid rgba(226,75,74,0.1);
+      border-bottom: 1px solid rgba(226,75,74,0.1);
+    }
+
+    @media (max-width: 860px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .nav-links { display: none; position: absolute; top: 84px; left: 0; width: 100%; background: var(--ink); flex-direction: column; padding: 24px; border-bottom: 1px solid var(--line); }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: block; }
+      .nav-links .btn { width: 100%; margin-top: 16px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Exterior car detailing",
+    "name": "Exterior Detailing — Hand Wash or Full Decontamination",
+    "url": "https://detlingsdetailing.com/exterior-detailing.html",
+    "areaServed": {"@type": "Place", "name": "Greater Cincinnati, Northern Kentucky, and Southeast Indiana"},
+    "provider": {
+      "@type": "AutoWash",
+      "name": "Detling's Mobile Detailing",
+      "telephone": "+15134449924",
+      "url": "https://detlingsdetailing.com/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header id="header">
+    <div class="nav-container">
+      <a href="/" class="brand">DETLING'S <span class="text-red">DETAILING</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <nav class="nav-links" id="nav-menu">
+        <a href="/#services">Services</a>
+        <a href="/#why">Why Us</a>
+        <a href="/#work">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="/#footer">Contact</a>
+        <a href="quote.html" class="btn btn-red">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section text-center">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <h1 class="h2">Exterior Detailing — Hand Wash or Full Decontamination</h1>
+        <p class="lead mx-auto">Every exterior service starts with a proper two-bucket hand wash — never a swirl-inducing tunnel. The Wash keeps a maintained car sharp; the Exterior Detail strips embedded contamination and seals the paint with months of ceramic protection.</p>
+        
+        <div style="text-align: left; max-width: 800px; margin: 0 auto; margin-top: 48px;">
+          <h2 class="h2" style="font-size: 32px;">The Wash vs. Exterior Detail</h2>
+          <table class="comparison-table" style="border-collapse: separate; border-spacing: 0;">
+            <thead>
+              <tr>
+                <th style="border-top-left-radius: 16px;">Service</th>
+                <th>The Wash</th>
+                <th class="highlight" style="background: rgba(226,75,74,0.05); border: 1px solid var(--red); border-bottom: none; border-top-right-radius: 16px;">
+                  <div style="font-size: 16px; color: var(--white); font-weight: 600; font-family: 'Barlow', sans-serif; text-transform: none; letter-spacing: normal;">Exterior Detail</div>
+                  <div style="font-size: 20px;">FULL DECON</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Two-bucket hand wash</td><td><span style="color: var(--red); font-weight: bold;">✓</span></td><td style="background: rgba(226,75,74,0.05); border-left: 1px solid var(--red); border-right: 1px solid var(--red);"><span style="color: var(--red); font-weight: bold;">✓</span></td></tr>
+              <tr><td>Wheels, tires & wheel wells</td><td><span style="color: var(--red); font-weight: bold;">✓</span></td><td style="background: rgba(226,75,74,0.05); border-left: 1px solid var(--red); border-right: 1px solid var(--red);"><span style="color: var(--red); font-weight: bold;">✓</span></td></tr>
+              <tr><td>Tire dressing</td><td><span style="color: var(--red); font-weight: bold;">✓</span></td><td style="background: rgba(226,75,74,0.05); border-left: 1px solid var(--red); border-right: 1px solid var(--red);"><span style="color: var(--red); font-weight: bold;">✓</span></td></tr>
+              <tr><td>Exterior glass</td><td><span style="color: var(--red); font-weight: bold;">✓</span></td><td style="background: rgba(226,75,74,0.05); border-left: 1px solid var(--red); border-right: 1px solid var(--red);"><span style="color: var(--red); font-weight: bold;">✓</span></td></tr>
+              <tr><td>Iron decontamination</td><td><span style="color: var(--muted-2);">—</span></td><td style="background: rgba(226,75,74,0.05); border-left: 1px solid var(--red); border-right: 1px solid var(--red);"><span style="color: var(--red); font-weight: bold;">✓</span></td></tr>
+              <tr><td>Clay bar treatment</td><td><span style="color: var(--muted-2);">—</span></td><td style="background: rgba(226,75,74,0.05); border-left: 1px solid var(--red); border-right: 1px solid var(--red);"><span style="color: var(--red); font-weight: bold;">✓</span></td></tr>
+              <tr><td style="border-bottom: none;">Ceramic paint protection</td><td style="border-bottom: none;">2–3 months</td><td style="background: rgba(226,75,74,0.05); border: 1px solid var(--red); border-top: none; border-bottom-right-radius: 16px;"><span style="color: var(--red); font-weight: bold;">6 months</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-red-tint" style="padding: 80px 0;">
+      <div class="container text-center">
+        <h2 class="h2">Which one do I need?</h2>
+        <p class="lead mx-auto" style="max-width: 800px;">Choose The Wash for regular maintenance on a car that's already in good shape. Choose the Exterior Detail if the paint feels rough, you can see baked-on grime, water no longer beads, or you want real protection heading into pollen or salt season.</p>
+      </div>
+    </section>
+
+    <section style="padding: 80px 0;">
+      <div class="container">
+        <div class="slider-container">
+          <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec065adefd85d72dadfe1.jpg" alt="Dirty pickup truck before mobile detailing" width="800" height="1000" loading="lazy" class="slider-img slider-before">
+          <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec06446e5b517c51ebad2.jpg" alt="Pickup truck after full mobile detail" width="800" height="1000" loading="lazy" class="slider-img slider-after">
+          <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Image comparison slider">
+          <div class="slider-divider"></div>
+          <div class="slider-grip">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </div>
+          <div class="slider-tag tag-before">Before</div>
+          <div class="slider-tag tag-after">After</div>
+        </div>
+        
+        <div class="gallery-grid" style="margin-top: 48px;">
+            <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a50174e3a44372f456352f4.jpg" alt="Exterior detailing in action on a BMW" width="1191" height="1191" loading="lazy" class="gallery-img" style="aspect-ratio: 1 / 1; object-fit: cover;">
+            <img src="https://vibe.filesafe.space/1782875371920744797/attachments/b5474d4c-125c-4d8c-8993-97e714b033cc.jpg" alt="Kia Telluride shining after a full exterior detail" width="835" height="1113" loading="lazy" class="gallery-img" style="aspect-ratio: 1 / 1; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-red-tint" style="padding: 80px 0;">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="h2 text-center" style="margin-bottom: 48px;">Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+          <h3>What does the clay bar and iron decon actually do?</h3>
+          <p>Road film, brake dust, tree sap, and industrial fallout bond to your paint over time — washing alone won't remove them. Iron decon dissolves the metallic contamination and the clay bar lifts the rest, leaving the paint truly smooth before we apply protection.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does the ceramic protection last?</h3>
+          <p>The Wash includes a ceramic topper good for roughly 2–3 months. The Exterior Detail's ceramic protection lasts about 6 months with normal care.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you need my water or power?</h3>
+          <p>Yes, we just need access to an outdoor water spigot and a standard power outlet. We bring all the professional equipment and supplies.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 64px;">
+          <p style="margin-bottom: 24px;">Want the complete reset? Book a <a href="/full-detail.html" style="color: var(--red); text-decoration: none; font-weight: 500;">Full Detail</a> — this service plus our signature interior detail in one visit, and the best value we offer.</p>
+          <a href="quote.html" class="btn btn-red">Get a Free Exterior Detail Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+      <footer id="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="brand" style="margin-bottom: 16px; display: inline-block;">DETLING'S <span class="text-red">DETAILING</span></a>
+        <p>Owner-operated mobile detailing for Greater Cincinnati & Northern Kentucky. We pull up — you keep your day.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="sms:+15134449924">Text 513-444-9924</a>
+        <a href="tel:+15134449924">Call 513-444-9924</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/interior-detailing.html">Interior Detailing</a>
+        <a href="/exterior-detailing.html">Exterior Detailing</a>
+        <a href="/full-detail.html">Full Detail</a>
+      </div>
+      <div class="footer-col">
+        <h4>Mobile Detailing Service Areas</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; margin-bottom: 16px;">
+          <a href="/cincinnati.html">Cincinnati</a>
+          <a href="/mason.html">Mason</a>
+          <a href="/west-chester.html">West Chester</a>
+          <a href="/liberty-township.html">Liberty Township</a>
+          <a href="/hamilton.html">Hamilton</a>
+          <a href="/fairfield.html">Fairfield</a>
+          <a href="/loveland.html">Loveland</a>
+          <a href="/blue-ash.html">Blue Ash</a>
+          <a href="/florence.html">Florence, KY</a>
+          <a href="/lawrenceburg.html">Lawrenceburg, IN</a>
+        </div>
+        <a href="service-areas.html" style="color:var(--red);">View All Areas &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Detling's Detailing · <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> · <a href="terms.html" style="color: inherit; text-decoration: none;">Terms of Service</a></div>
+      <div>Run personally, every job</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('active');
+      });
+    }
+    
+    const sliders = document.querySelectorAll('.slider-container');
+    sliders.forEach(slider => {
+      const input = slider.querySelector('.slider-input');
+      const updateSlider = () => { slider.style.setProperty('--pos', input.value); };
+      input.addEventListener('input', updateSlider);
+      updateSlider();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Car Detailing in Cincinnati & NKY | Detling's Detailing</title>
+  <meta name="description" content="Owner-operated mobile car detailing that comes to your driveway or office anywhere in Greater Cincinnati & Northern Kentucky. Interior & exterior — free quotes by text.">
+  <link rel="canonical" href="https://detlingsdetailing.com/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" href="https://vibe.filesafe.space/meta/1782875371920744797/favicon.png">
+
+  <style>
+    :root {
+      --ink: #0B0B0C;
+      --ink-2: #0F0F11;
+      --surface: #161618;
+      --surface-2: #1B1B1F;
+      --line: #2A2A2F;
+      --line-2: #3A3A41;
+      --red: #E24B4A;
+      --red-bright: #EC5A59;
+      --white: #F6F6F7;
+      --muted: #ABABB2;
+      --muted-2: #76767D;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--ink);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    section {
+      scroll-margin-top: 84px;
+      padding: 80px 24px;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* Typography */
+    h1, h2, h3, .eyebrow, .btn, .nav-links a {
+      font-family: 'Saira Condensed', sans-serif;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .h2 {
+      font-weight: 700;
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(16px, 2.4vw, 19px);
+      max-width: 62ch;
+      margin-bottom: 40px;
+    }
+
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .text-red { color: var(--red); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 0.045em;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 26px;
+      border-radius: 11px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      gap: 8px;
+    }
+
+    .btn-red {
+      background: linear-gradient(to bottom, var(--red-bright), var(--red));
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(226, 75, 74, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-red:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(226, 75, 74, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--white);
+      border: 1px solid var(--line-2);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--red);
+      background: rgba(226, 75, 74, 0.05);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 11, 12, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    header.scrolled {
+      background: rgba(11, 11, 12, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .brand {
+      font-family: 'Saira Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    #top {
+      position: relative;
+      padding: 120px 24px;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(226,75,74,0.15) 0%, rgba(11,11,12,0) 70%);
+      z-index: -2;
+    }
+
+    .hero-sweep {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+      transform: rotate(30deg) translateX(-100%);
+      z-index: -1;
+      animation: sweep 1.7s ease 0.5s forwards;
+    }
+
+    @keyframes sweep {
+      100% { transform: rotate(30deg) translateX(100%); }
+    }
+
+    .hero-logo {
+      width: clamp(218px, 42vw, 300px);
+      height: auto;
+      margin: 0 auto 32px;
+      display: block;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    }
+
+    .hero-h1 {
+      font-size: clamp(40px, 8.4vw, 78px);
+      line-height: 0.95;
+      font-weight: 800;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    .rating-line {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* Services */
+    #services {
+      background: var(--ink-2);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (min-width: 861px) {
+      #services .grid-3 {
+        grid-template-columns: 1fr 1.15fr 1fr;
+        align-items: stretch;
+      }
+      #services .card:not(.featured) {
+        margin: 24px 0;
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      transition: transform 0.3s, border-color 0.3s;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
+      transform: rotate(30deg) translateX(-100%);
+      z-index: 1;
+      pointer-events: none;
+      transition: none;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-2);
+    }
+
+    .card:hover::before {
+      animation: card-sweep 0.6s ease forwards;
+    }
+
+    @keyframes card-sweep {
+      100% { transform: rotate(30deg) translateX(100%); }
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(226,75,74,0.1);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .card.featured {
+      border-color: rgba(226,75,74,0.3);
+      box-shadow: 0 10px 30px rgba(226,75,74,0.05);
+      padding: 38px;
+    }
+
+    .card.featured h3 {
+      font-size: 30px;
+    }
+
+    .card.featured p {
+      font-size: 19px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(226,75,74,0.1);
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-family: 'Saira Condensed', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .helper-line {
+      margin-top: 48px;
+      color: var(--muted);
+    }
+
+    .helper-line a {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Why Us */
+    .bg-red-tint {
+      background: radial-gradient(circle at top, rgba(226,75,74,0.05) 0%, var(--ink) 100%);
+      border-top: 1px solid rgba(226,75,74,0.1);
+      border-bottom: 1px solid rgba(226,75,74,0.1);
+    }
+
+    .why-item {
+      border-left: 3px solid var(--red);
+      padding-left: 20px;
+    }
+
+    .why-item h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
+      color: var(--muted);
+    }
+
+    /* How it works */
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .step-num {
+      color: var(--red);
+      font-family: 'Saira Condensed', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    /* Gallery */
+    .slider-container {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      --pos: 50;
+    }
+
+    .slider-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+
+    .slider-after {
+      clip-path: inset(0 0 0 calc(var(--pos) * 1%));
+    }
+
+    .slider-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 10;
+    }
+
+    .slider-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(var(--pos) * 1%);
+      width: 2px;
+      background: var(--red);
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .slider-grip {
+      position: absolute;
+      top: 50%;
+      left: calc(var(--pos) * 1%);
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--red);
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .slider-tag {
+      position: absolute;
+      font-family: 'Saira Condensed', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      z-index: 5;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-before {
+      top: 16px;
+      left: 16px;
+      background: rgba(11,11,12,0.8);
+      backdrop-filter: blur(4px);
+      color: var(--white);
+    }
+
+    .tag-after {
+      top: 16px;
+      right: 16px;
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .slider-caption {
+      margin-top: 16px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Reviews */
+    .stars {
+      color: var(--red);
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+
+    .review-quote {
+      font-size: 16px;
+      font-style: italic;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .review-author {
+      font-family: 'Saira Condensed', sans-serif;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Form */
+    .form-container {
+      max-width: 540px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      font-family: 'Saira Condensed', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    input, select {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--line-2);
+      color: var(--white);
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(226,75,74,0.2);
+    }
+
+    select {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23E24B4A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 48px;
+    }
+
+    .form-container .btn {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--ink-2);
+      border-top: 1px solid var(--line);
+      padding: 64px 24px 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      max-width: 1140px;
+      margin: 0 auto 64px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Saira Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+    .footer-col p, .footer-col a {
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted-2);
+      font-size: 14px;
+    }
+
+    /* Mobile Bar */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      padding: 12px 24px calc(12px + env(safe-area-inset-bottom));
+      z-index: 90;
+      gap: 12px;
+    }
+
+    .mobile-bar .btn {
+      flex: 1;
+      padding: 12px;
+    }
+
+    /* Animations */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition-delay: calc(var(--i, 0) * 0.08s);
+    }
+
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+      .hero-sweep { display: none; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .grid-3, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        gap: 32px;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 84px;
+        left: 0;
+        width: 100%;
+        background: var(--ink);
+        flex-direction: column;
+        padding: 24px;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links .btn {
+        width: 100%;
+        margin-top: 16px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .mobile-bar {
+        display: flex;
+      }
+      body {
+        padding-bottom: calc(70px + env(safe-area-inset-bottom));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-ctas {
+        flex-direction: column;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+    <meta property="og:title" content="Mobile Car Detailing in Cincinnati & NKY | Detling's Detailing">
+    <meta property="og:description" content="Owner-operated mobile car detailing that comes to your driveway or office anywhere in Greater Cincinnati & Northern Kentucky. Interior & exterior — free quotes by text.">
+    <meta property="og:image" content="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec0604ddb4a8e58ebfabd.jpg">
+    <meta property="og:url" content="https://detlingsdetailing.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mobile Car Detailing in Cincinnati & NKY | Detling's Detailing">
+    <meta name="twitter:description" content="Owner-operated mobile car detailing that comes to your driveway or office anywhere in Greater Cincinnati & Northern Kentucky. Interior & exterior — free quotes by text.">
+    <meta name="twitter:image" content="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec0604ddb4a8e58ebfabd.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoWash",
+      "additionalType": "https://en.wikipedia.org/wiki/Auto_detailing",
+      "name": "Detling's Detailing",
+      "description": "Owner-operated mobile car detailing serving Greater Cincinnati, Northern Kentucky, and southeast Indiana. Interior and exterior detailing at your home or office.",
+      "url": "https://detlingsdetailing.com/",
+      "telephone": "+15134449924",
+      "image": "https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec0604ddb4a8e58ebfabd.jpg",
+      "logo": "https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec05b4fbc0a89063ee026.png",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cincinnati",
+        "addressRegion": "OH",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 39.1031, "longitude": -84.5120 },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Cincinnati, OH"}, {"@type": "City", "name": "Mason, OH"},
+        {"@type": "City", "name": "West Chester, OH"}, {"@type": "City", "name": "Liberty Township, OH"},
+        {"@type": "City", "name": "Hamilton, OH"}, {"@type": "City", "name": "Fairfield, OH"},
+        {"@type": "City", "name": "Loveland, OH"}, {"@type": "City", "name": "Milford, OH"},
+        {"@type": "City", "name": "Blue Ash, OH"}, {"@type": "City", "name": "Montgomery, OH"},
+        {"@type": "City", "name": "Sharonville, OH"}, {"@type": "City", "name": "Springboro, OH"},
+        {"@type": "City", "name": "Lebanon, OH"}, {"@type": "City", "name": "Anderson Township, OH"},
+        {"@type": "City", "name": "Madeira, OH"}, {"@type": "City", "name": "Indian Hill, OH"},
+        {"@type": "City", "name": "Florence, KY"}, {"@type": "City", "name": "Union, KY"},
+        {"@type": "City", "name": "Fort Thomas, KY"}, {"@type": "City", "name": "Lawrenceburg, IN"}
+      ],
+      "sameAs": ["https://maps.app.goo.gl/nSSUy2XLdBrbmhuFA"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does mobile detailing cost in Cincinnati?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our exterior detail starts at $89. Our most popular service, the Signature interior deep clean, starts at $259. Larger vehicles and heavier messes add to the price. Tap \"Get Quote\" and fill out the form with your vehicle and what it needs, and you'll get a straight quote — no upsells, no surprises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you really come to me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We bring everything to your home or workplace anywhere in Greater Cincinnati and Northern Kentucky — you don't drop off your car or wait at a shop. Most customers hand us the keys and get on with their day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you need from me on-site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A place to park the vehicle, plus access to an outdoor water spigot and a standard power outlet — we bring everything else. A driveway, garage, or your own parking spot all work. If you're not sure whether your location has water and power access, just text us and we'll sort it out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a detail take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Express interior or The Wash is quick; a Signature deep clean or full Exterior Detail takes several hours. You'll get a time estimate with your quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All of Greater Cincinnati and Northern Kentucky, including Mason, West Chester, and surrounding communities. See the full list on our service areas page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you remove pet hair and stains?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Seat and carpet shampoo and stain treatment are part of our interior detail, and pet hair removal is available as an add-on — it takes real extra time to do right, so we price it separately. Mention pets when you request your quote and we'll include it up front, no surprises on the day."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+<body>
+
+  <header id="header">
+    <div class="nav-container">
+      <a href="#top" class="brand">DETLING'S <span class="text-red">DETAILING</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <nav class="nav-links" id="nav-menu">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#work">Gallery</a>
+        <a href="#reviews">Testimonials</a>
+        <a href="#footer">Contact</a>
+        <a href="quote.html" class="btn btn-red">
+          Get Quote
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="top" class="text-center">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-sweep" aria-hidden="true"></div>
+      <div class="container" data-reveal>
+        <h1 class="eyebrow" style="margin: 0 0 16px;">Mobile Car Detailing in Greater Cincinnati & NKY</h1>
+        <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec056adefd85d72dade15.png" alt="Detling's Detailing logo" class="hero-logo" width="560" height="560" fetchpriority="high">
+        <p class="hero-h1">Showroom <span class="text-red">shine</span>, no showroom trip</p>
+        <p class="lead mx-auto">We bring full interior and exterior detailing straight to your home or workplace. Text us, get a quote, get your time back.</p>
+        <div class="hero-ctas">
+          <a href="quote.html" class="btn btn-red">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Get free quote
+          </a>
+          <a href="#work" class="btn btn-ghost">See our work</a>
+        </div>
+        <div class="rating-line">
+          <span class="text-red">★★★★★</span> 5.0 on Google
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <span class="eyebrow">What we offer</span>
+          <h2 class="h2">Three ways to get your car right</h2>
+        </div>
+        <div class="grid-3" style="margin-top: 48px;">
+          <a href="/exterior-detailing.html" class="card" data-reveal style="--i: 1; display: block; text-decoration: none; color: inherit;">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            </div>
+            <h3>Exterior detail</h3>
+            <p>Hand wash, foam cannon, wheels and tires, exterior glass, dressed tires and trim.</p>
+            <p style="margin-top: 12px; font-weight: 600; color: var(--red);">Click to see full breakdown &rarr;</p>
+          </a>
+          <a href="/full-detail.html" class="card featured" data-reveal style="--i: 2; display: block; text-decoration: none; color: inherit;">
+            <div class="badge">Most popular</div>
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <h3>Full detail</h3>
+            <p>Interior and exterior together. Your car, basically brand new.</p>
+            <p style="margin-top: 12px; font-weight: 600; color: var(--red);">Click to see full breakdown &rarr;</p>
+          </a>
+          <a href="/interior-detailing.html" class="card" data-reveal style="--i: 3; display: block; text-decoration: none; color: inherit;">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </div>
+            <h3>Interior detail</h3>
+            <p>Deep vacuum, seats and carpet shampoo, stain removal, interior glass, every surface wiped down and detailed.</p>
+            <p style="margin-top: 12px; font-weight: 600; color: var(--red);">Click to see full breakdown &rarr;</p>
+          </a>
+        </div>
+        <p class="text-center helper-line" data-reveal style="--i: 4;">
+          Not sure which one you need? <a href="quote.html">Reach out and we'll help you pick &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="why" class="bg-red-tint">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <span class="eyebrow">Why Detling's</span>
+          <h2 class="h2">We come to you, that's the whole pitch</h2>
+        </div>
+        <div class="grid-3" style="margin-top: 48px;">
+          <div class="why-item" data-reveal style="--i: 1;">
+            <h3>We come to you</h3>
+            <p>Home or work, anywhere in Greater Cincinnati and NKY.</p>
+          </div>
+          <div class="why-item" data-reveal style="--i: 2;">
+            <h3>You keep your day</h3>
+            <p>No drop off, no waiting room, no lost Saturday.</p>
+          </div>
+          <div class="why-item" data-reveal style="--i: 3;">
+            <h3>5 star rated</h3>
+            <p>Real reviews from real Greater Cincinnati customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <div class="text-center" data-reveal style="margin-bottom: 48px;">
+          <h2 class="h2" style="font-size: clamp(36px, 6vw, 60px);">How it works</h2>
+        </div>
+        <div class="grid-3">
+          <div class="step-card" data-reveal style="--i: 1;">
+            <div class="step-num">01</div>
+            <h3>Reach out</h3>
+            <p style="color: var(--muted); margin-top: 8px;">Fill out the form to request a free quote, or text or call us directly if you have any questions.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 2;">
+            <div class="step-num">02</div>
+            <h3>Get your quote</h3>
+            <p style="color: var(--muted); margin-top: 8px;">We'll give you a straight price and pick a time that fits your day.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 3;">
+            <div class="step-num">03</div>
+            <h3>We pull up</h3>
+            <p style="color: var(--muted); margin-top: 8px;">We show up to your home or work and get your car right.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="bg-red-tint">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <span class="eyebrow">See our work</span>
+          <h2 class="h2">Before and after, no filters needed</h2>
+          <p class="lead mx-auto">Every job, the same standard. Here's proof, not just promises. Drag the slider to reveal the finish.</p>
+        </div>
+        
+        <div class="grid-3" style="margin-top: 48px;">
+          <!-- Slider 1 -->
+          <div data-reveal style="--i: 1;">
+            <div class="slider-container">
+              <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec065adefd85d72dadfe1.jpg" alt="Dirty pickup truck before mobile detailing" width="800" height="1000" loading="lazy" class="slider-img slider-before">
+              <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec06446e5b517c51ebad2.jpg" alt="Pickup truck after full mobile detail" width="800" height="1000" loading="lazy" class="slider-img slider-after">
+              <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Image comparison slider">
+              <div class="slider-divider"></div>
+              <div class="slider-grip">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </div>
+              <div class="slider-tag tag-before">Before</div>
+              <div class="slider-tag tag-after">After</div>
+            </div>
+            <p class="slider-caption">Exterior — full wash & detail</p>
+          </div>
+
+          <!-- Slider 2 -->
+          <div data-reveal style="--i: 2;">
+            <div class="slider-container">
+              <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec056708c41d4df090632.jpg" alt="Car interior before detailing" width="800" height="1000" loading="lazy" class="slider-img slider-before">
+              <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec056eada8c1f4570c612.jpg" alt="Car interior after Signature interior detail" width="800" height="1000" loading="lazy" class="slider-img slider-after">
+              <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Image comparison slider">
+              <div class="slider-divider"></div>
+              <div class="slider-grip">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </div>
+              <div class="slider-tag tag-before">Before</div>
+              <div class="slider-tag tag-after">After</div>
+            </div>
+            <p class="slider-caption">Interior — deep clean & reset</p>
+          </div>
+
+          <!-- Slider 3 -->
+          <div data-reveal style="--i: 3;">
+            <div class="slider-container">
+              <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec0564fbc0a89063edfb3.jpg" alt="Car seat stains before treatment" width="800" height="1000" loading="lazy" class="slider-img slider-before">
+              <img src="https://assets.cdn.filesafe.space/ZXOSNEF7yJynTkH2EnQn/media/6a4ec0569c9b37b5fd9f5e51.jpg" alt="Car seat after stain and spot removal" width="800" height="1000" loading="lazy" class="slider-img slider-after">
+              <input type="range" min="0" max="100" value="50" class="slider-input" aria-label="Image comparison slider">
+              <div class="slider-divider"></div>
+              <div class="slider-grip">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </div>
+              <div class="slider-tag tag-before">Before</div>
+              <div class="slider-tag tag-after">After</div>
+            </div>
+            <p class="slider-caption">Interior – Stain Removal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <span class="eyebrow">Trusted locally</span>
+          <h2 class="h2"><span class="text-red">★★★★★</span> Real Reviews, Real Cars, Real Results</h2>
+          <p class="lead mx-auto">Straight from our Google reviews.</p>
+        </div>
+        <div class="grid-3" style="margin-top: 48px;">
+          <div class="step-card" data-reveal style="--i: 1;">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"Inside looks brand new, even spots I've given up on. Joel clearly takes pride in his work."</p>
+            <p class="review-author">William G. · Google review</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 2;">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"Made it look completely brand new inside and out. Attention to detail was unlike anything I've experienced before."</p>
+            <p class="review-author">Mace P. · Google review</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 3;">
+            <div class="stars">★★★★★</div>
+            <p class="review-quote">"Car looks better than it did coming off the lot! Great service!!"</p>
+            <p class="review-author">Brad H. · Google review</p>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top: 48px;" data-reveal style="--i: 4;">
+          <a href="testimonials.html" class="btn btn-ghost">Read more reviews &rarr;</a>
+          <a href="https://search.google.com/local/reviews?placeid=ChIJ_TgSpZpoSg4R-MB9aFKZtKg" class="btn btn-ghost" style="margin-left: 16px;">Read all our reviews on Google &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <span class="eyebrow">Good to know</span>
+          <h2 class="h2">Frequently asked questions</h2>
+        </div>
+        <div class="grid-3" style="margin-top: 48px;">
+          <div class="step-card" data-reveal style="--i: 1;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">How much does mobile detailing cost in Cincinnati?</h3>
+            <p style="color: var(--muted);">Our exterior detail starts at $89. Our most popular service, the Signature interior deep clean, starts at $259. Larger vehicles and heavier messes add to the price. Tap "Get Quote" and fill out the form with your vehicle and what it needs, and you'll get a straight quote — no upsells, no surprises.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 2;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">Do you really come to me?</h3>
+            <p style="color: var(--muted);">Yes. We bring everything to your home or workplace anywhere in Greater Cincinnati and Northern Kentucky — you don't drop off your car or wait at a shop. Most customers hand us the keys and get on with their day.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 3;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">What do you need from me on-site?</h3>
+            <p style="color: var(--muted);">A place to park the vehicle, plus access to an outdoor water spigot and a standard power outlet — we bring everything else. A driveway, garage, or your own parking spot all work. If you're not sure whether your location has water and power access, just text us and we'll sort it out.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 4;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">How long does a detail take?</h3>
+            <p style="color: var(--muted);">An Express interior or The Wash is quick; a Signature deep clean or full Exterior Detail takes several hours. You'll get a time estimate with your quote.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 5;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">What areas do you serve?</h3>
+            <p style="color: var(--muted);">All of Greater Cincinnati and Northern Kentucky, including Mason, West Chester, and surrounding communities. See the full list on our <a href="service-areas.html" style="color: var(--red); text-decoration: none;">service areas page</a>.</p>
+          </div>
+          <div class="step-card" data-reveal style="--i: 6;">
+            <h3 style="font-size: 20px; margin-bottom: 12px;">Can you remove pet hair and stains?</h3>
+            <p style="color: var(--muted);">Yes. Seat and carpet shampoo and stain treatment are part of our interior detail, and pet hair removal is available as an add-on — it takes real extra time to do right, so we price it separately. Mention pets when you request your quote and we'll include it up front, no surprises on the day.</p>
+          </div>
+      </div>
+    </div>
+    </section>
+    </section>
+
+    <section id="contact" class="bg-red-tint" style="position: relative; overflow: hidden;">
+      <div class="hero-glow" aria-hidden="true" style="top: 50%; left: 50%; width: 800px; height: 800px; z-index: 0;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="text-center" data-reveal>
+          <h2 class="h2">Ready for the easiest detail you've ever booked?</h2>
+          <p class="lead mx-auto">Get a straight price and pick a time that fits your day.</p>
+          <a href="quote.html" class="btn btn-red" style="margin-top: 24px;">
+            Get free quote
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="brand" style="margin-bottom: 16px; display: inline-block;">DETLING'S <span class="text-red">DETAILING</span></a>
+        <p>Owner-operated mobile detailing for Greater Cincinnati & Northern Kentucky. We pull up — you keep your day.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="sms:+15134449924">Text 513-444-9924</a>
+        <a href="tel:+15134449924">Call 513-444-9924</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/interior-detailing.html">Interior Detailing</a>
+        <a href="/exterior-detailing.html">Exterior Detailing</a>
+        <a href="/full-detail.html">Full Detail</a>
+      </div>
+      <div class="footer-col">
+        <h4>Mobile Detailing Service Areas</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; margin-bottom: 16px;">
+          <a href="/cincinnati.html">Cincinnati</a>
+          <a href="/mason.html">Mason</a>
+          <a href="/west-chester.html">West Chester</a>
+          <a href="/liberty-township.html">Liberty Township</a>
+          <a href="/hamilton.html">Hamilton</a>
+          <a href="/fairfield.html">Fairfield</a>
+          <a href="/loveland.html">Loveland</a>
+          <a href="/blue-ash.html">Blue Ash</a>
+          <a href="/florence.html">Florence, KY</a>
+          <a href="/lawrenceburg.html">Lawrenceburg, IN</a>
+        </div>
+        <a href="service-areas.html" style="color:var(--red);">View All Areas &rarr;</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Detling's Detailing · <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> · <a href="terms.html" style="color: inherit; text-decoration: none;">Terms of Service</a></div>
+      <div>Run personally, every job</div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="quote.html" class="btn btn-red">
+      Get Quote
+    </a>
+    <a href="tel:+15134449924" class="btn btn-ghost" style="background: var(--surface-2);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      Call
+    </a>
+  </div>
+
+  <script>
+    // Mobile Nav Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 860) {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          navLinks.classList.remove('active');
+        }
+      });
+    });
+
+    // Nav Scroll State
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 12) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Before/After Sliders
+    const sliders = document.querySelectorAll('.slider-container');
+    sliders.forEach(slider => {
+      const input = slider.querySelector('.slider-input');
+      
+      const updateSlider = () => {
+        slider.style.setProperty('--pos', input.value);
+      };
+      
+      input.addEventListener('input', updateSlider);
+      // Initialize
+      updateSlider();
+    });
+
+    // Scroll Reveal
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealElements = document.querySelectorAll('[data-reveal]');
+
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('revealed'));
+    }
+  </script>
+</body>
+</html>
