@@ -201,11 +201,12 @@
     /* Reviews Page Specific */
     .grid-3 {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
 
     .review-card {
+      aspect-ratio: 1 / 1;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 16px;
@@ -222,14 +223,16 @@
 
     .review-card img {
       width: 100%;
-      height: 240px;
+      height: auto;
+      aspect-ratio: 5 / 2;
+      flex-shrink: 0;
       -o-object-fit: cover;
          object-fit: cover;
       border-bottom: 1px solid var(--line);
     }
 
     .review-card-content {
-      padding: 32px;
+      padding: 24px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -238,15 +241,15 @@
     .stars {
       color: var(--red);
       letter-spacing: 2px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       font-size: 18px;
     }
 
     .review-quote {
-      font-size: 16px;
+      font-size: 15px;
       font-style: italic;
-      margin-bottom: 24px;
-      line-height: 1.7;
+      margin-bottom: 12px;
+      line-height: 1.55;
       flex: 1;
     }
 
@@ -384,6 +387,44 @@
         padding-bottom: calc(70px + env(safe-area-inset-bottom));
       }
     }
+
+    /* Reviews grid: 3 columns desktop, 2 tablet, 1 phone (after the 860px rule so these win) */
+    @media (max-width: 1080px) and (min-width: 561px) {
+      #reviews .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      #reviews .grid-3 { grid-template-columns: minmax(0, 1fr); }
+    }
+  </style>
+  <style id="site-header-css">
+    /* Shared header: identical to the homepage on every page. Keep in sync with index.html. */
+    #header { position: sticky; top: 0; z-index: 100; margin: 0; padding: 0;
+      background: rgba(11, 11, 12, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent; transition: background 0.3s, border-color 0.3s; }
+    #header.scrolled { background: rgba(11, 11, 12, 0.95); border-bottom: 1px solid var(--line); }
+    #header .nav-container { display: flex; justify-content: space-between; align-items: center;
+      height: 84px; max-width: 1140px; width: auto; margin: 0 auto; padding: 0 24px; }
+    #header .brand { font-family: 'Saira Condensed', sans-serif; font-size: 24px; font-weight: 800;
+      text-decoration: none; color: var(--white); letter-spacing: 0.02em; margin: 0; }
+    #header .nav-links { display: flex; gap: 32px; align-items: center; margin: 0; padding: 0; }
+    #header .nav-links a { font-family: 'Saira Condensed', sans-serif; color: var(--white); text-decoration: none;
+      font-weight: 600; font-size: 16px; transition: color 0.2s; }
+    #header .nav-links a:hover { color: var(--red); }
+    #header .nav-links a.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      text-transform: uppercase; letter-spacing: 0.045em; padding: 16px 26px; border-radius: 11px; border: none;
+      background: linear-gradient(to bottom, var(--red-bright), var(--red)); color: var(--white);
+      box-shadow: 0 4px 14px rgba(226, 75, 74, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease; cursor: pointer; }
+    #header .nav-links a.btn:hover { transform: translateY(-2px); color: var(--red);
+      box-shadow: 0 6px 20px rgba(226, 75, 74, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+    #header .menu-toggle { display: none; background: none; border: none; color: var(--white); cursor: pointer; }
+    @media (max-width: 860px) {
+      #header .nav-links { display: none; position: absolute; top: 84px; left: 0; width: 100%;
+        background: var(--ink); flex-direction: column; padding: 24px; border-bottom: 1px solid var(--line); }
+      #header .nav-links.active { display: flex; }
+      #header .menu-toggle { display: block; }
+      #header .nav-links .btn { width: 100%; margin-top: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -398,9 +439,9 @@
         <a href="/#services">Services</a>
         <a href="/#why">Why Us</a>
         <a href="/#work">Gallery</a>
-        <a href="testimonials.html">Testimonials</a>
+        <a href="/testimonials.html">Testimonials</a>
         <a href="/#footer">Contact</a>
-        <a href="quote.html" class="btn btn-red">Get Quote</a>
+        <a href="/quote.html" class="btn btn-red">Get Quote</a>
       </nav>
     </div>
   </header>
