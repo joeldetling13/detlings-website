@@ -274,6 +274,17 @@ const MESSAGES = {
   uncertain: "We're not sure your request was received. You can safely try again with the same details, or call or email us.",
 };
 
+export async function startQuoteForm({ button, fallback, createFlow }) {
+  fallback.hidden = true;
+  try {
+    const flow = await createFlow();
+    return { ready: true, flow };
+  } catch {
+    fallback.hidden = false;
+    return { ready: false };
+  }
+}
+
 export async function initQuoteForm() {
   const form = document.getElementById("quote-form");
   if (!form) return;
@@ -320,7 +331,7 @@ export async function initQuoteForm() {
     }
   });
 
-  try {
+  const started = await startQuoteForm({ button, fallback, createFlow: async () => {
     if (!crypto?.randomUUID || !crypto?.subtle) throw new Error("browser security functions unavailable");
     const turnstile = await loadTurnstile();
     const pendingToken = { current: null };
@@ -337,7 +348,7 @@ export async function initQuoteForm() {
       "timeout-callback": () => pendingToken.current?.fail(),
     });
     if (widgetId === undefined || widgetId === null) throw new Error("bot widget unavailable");
-    flow = createQuoteIntakeFlow({
+    return createQuoteIntakeFlow({
       config: QUOTE_CONFIG,
       storage: window.sessionStorage,
       fetchImpl: window.fetch.bind(window),
@@ -346,10 +357,13 @@ export async function initQuoteForm() {
       randomUUID: () => crypto.randomUUID(),
       redirect: (path) => window.location.assign(path),
     });
-    ready = true;
+  } });
+  ready = started.ready;
+  flow = started.flow;
+  if (ready) {
     fields.disabled = false;
     button.disabled = false;
-  } catch {
+  } else {
     showError("The form cannot start right now. Please call or email us instead.");
   }
 }
