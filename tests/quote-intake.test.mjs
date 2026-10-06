@@ -5,8 +5,10 @@ import { fileURLToPath } from "node:url";
 import test from "node:test";
 
 const quotePath = fileURLToPath(new URL("../docs/quote.html", import.meta.url));
+const thanksPath = fileURLToPath(new URL("../docs/thanks.html", import.meta.url));
 const scriptPath = fileURLToPath(new URL("../docs/quote-intake.js", import.meta.url));
 const quoteHtml = readFileSync(quotePath, "utf8");
+const thanksHtml = readFileSync(thanksPath, "utf8");
 const nonMarketingText = "By checking this box, I consent to receive non-marketing text messages from Detling's Detailing LLC at the phone number provided. Message frequency varies, message & data rates may apply. Text HELP for assistance, reply STOP to opt out.";
 const marketingText = "By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new service updates among others, from Detling's Detailing LLC at the phone number provided. Frequency may vary. Message & data rates may apply. Text HELP for assistance, reply STOP to opt out.";
 
@@ -84,6 +86,8 @@ test("the page cannot submit natively and shows a contact fallback if scripts fa
   assert.match(quoteHtml, /<script[^>]+src=["']\/quote-intake\.js["']/i);
   assert.match(quoteHtml, /href=["']tel:\+15134449924["']/);
   assert.match(quoteHtml, /contact@detlingsdetailing\.com/);
+  assert.match(quoteHtml, /Prefer to skip the form\? Call or text 513-444-9924 directly\./);
+  assert.match(thanksHtml, /Need us sooner\? Call or text 513-444-9924\./);
 });
 
 test("the contact fallback stays hidden after startup and appears if startup fails", async () => {

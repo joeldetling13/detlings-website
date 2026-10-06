@@ -263,15 +263,15 @@ const FIELD_IDS = {
 
 const MESSAGES = {
   invalid: "Please check the highlighted details and try again.",
-  bot_failed: "The security check did not finish. Please try again, or call or email us.",
-  bot_unavailable: "The security check is unavailable. Please call or email us instead.",
-  origin_rejected: "This form is unavailable from this address. Please call or email us.",
+  bot_failed: "The security check did not finish. Please try again, or call, text or email us.",
+  bot_unavailable: "The security check is unavailable. Please call, text or email us instead.",
+  origin_rejected: "This form is unavailable from this address. Please call, text or email us.",
   refresh: "The form wording changed. Please refresh this page before trying again.",
   request_conflict: "Your request changed while sending. Please review the details and try again.",
   too_large: "The request is too long. Please shorten the notes and try again.",
-  wrong_format: "This form could not be sent. Please refresh the page, or call or email us.",
-  unavailable: "We could not save your request right now. Please try again, or call or email us.",
-  uncertain: "We're not sure your request was received. You can safely try again with the same details, or call or email us.",
+  wrong_format: "This form could not be sent. Please refresh the page, or call, text or email us.",
+  unavailable: "We could not save your request right now. Please try again, or call, text or email us.",
+  uncertain: "We're not sure your request was received. You can safely try again with the same details, or call, text or email us.",
 };
 
 export async function startQuoteForm({ button, fallback, createFlow }) {
@@ -323,7 +323,7 @@ export async function initQuoteForm() {
       if (result.kind === "saved") return;
       if (result.kind === "rate_limited") {
         const minutes = Math.ceil(result.retryAfterSeconds / 60);
-        showError(`Too many requests right now. Please wait about ${minutes} minute${minutes === 1 ? "" : "s"} before trying again, or call or email us.`);
+        showError(`Too many requests right now. Please wait about ${minutes} minute${minutes === 1 ? "" : "s"} before trying again, or call, text or email us.`);
       } else {
         showError(MESSAGES[result.kind] ?? MESSAGES.uncertain, result.fields ?? []);
       }
@@ -364,7 +364,7 @@ export async function initQuoteForm() {
   ready = started.ready;
   flow = started.flow;
   if (!ready) {
-    showError("The form cannot start right now. Please call or email us instead.");
+    showError("The form cannot start right now. Please call, text or email us instead.");
   }
 }
 
