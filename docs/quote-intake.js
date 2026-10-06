@@ -276,8 +276,12 @@ const MESSAGES = {
 
 export async function startQuoteForm({ button, fallback, createFlow }) {
   fallback.hidden = true;
+  button.disabled = true;
+  button.textContent = "Loading…";
   try {
     const flow = await createFlow();
+    button.disabled = false;
+    button.textContent = "Submit request";
     return { ready: true, flow };
   } catch {
     fallback.hidden = false;
@@ -288,7 +292,6 @@ export async function startQuoteForm({ button, fallback, createFlow }) {
 export async function initQuoteForm() {
   const form = document.getElementById("quote-form");
   if (!form) return;
-  const fields = document.getElementById("quote-fields");
   const button = document.getElementById("quote-submit");
   const summary = document.getElementById("quote-error-summary");
   const fallback = document.getElementById("quote-fallback");
@@ -360,10 +363,7 @@ export async function initQuoteForm() {
   } });
   ready = started.ready;
   flow = started.flow;
-  if (ready) {
-    fields.disabled = false;
-    button.disabled = false;
-  } else {
+  if (!ready) {
     showError("The form cannot start right now. Please call or email us instead.");
   }
 }

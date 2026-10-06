@@ -295,15 +295,15 @@
       <noscript><p>Please call or email us to request a quote. This form needs JavaScript.</p></noscript>
       <form class="quote-form" id="quote-form">
         <p id="quote-error-summary" role="alert" tabindex="-1" hidden></p>
-        <fieldset id="quote-fields" disabled style="border:0; padding:0; margin:0; min-width:0;">
+        <fieldset id="quote-fields" style="border:0; padding:0; margin:0; min-width:0;">
         <label class="hp" aria-hidden="true">Website <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></label>
         <div class="row">
-          <div><label for="first_name">First Name <span class="req">*</span></label><input type="text" id="first_name" name="First Name" placeholder="Enter your first name" autocomplete="given-name" required></div>
-          <div><label for="last_name">Last Name <span class="req">*</span></label><input type="text" id="last_name" name="Last Name" placeholder="Enter your last name" autocomplete="family-name" required></div>
+          <div><label for="first_name">First Name <span class="req">*</span></label><input type="text" id="first_name" placeholder="Enter your first name" autocomplete="given-name" required></div>
+          <div><label for="last_name">Last Name <span class="req">*</span></label><input type="text" id="last_name" placeholder="Enter your last name" autocomplete="family-name" required></div>
         </div>
         <div class="row">
-          <div><label for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required></div>
-          <div><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
+          <div><label for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" required></div>
+          <div><label for="email">Email <span class="req">*</span></label><input type="email" id="email" placeholder="your@email.com" autocomplete="email" required></div>
         </div>
         <fieldset>
           <legend>Service Wanted <span class="req">*</span></legend>
@@ -315,7 +315,7 @@
         </fieldset>
         <div>
           <label for="vehicle_type">Vehicle Type <span class="req">*</span></label>
-          <select id="vehicle_type" name="Vehicle Type" required>
+          <select id="vehicle_type" required>
             <option value="" disabled selected>Pick One</option>
             <option>Coupe/Sedan</option>
             <option>SUV (2 Rows)</option>
@@ -326,16 +326,16 @@
         </div>
         <div>
           <label for="condition">Tell Us A Little About The Condition Of Your Vehicle</label>
-          <textarea id="condition" name="Vehicle Condition" placeholder="E.g., Excessive pet hair, heavy stains, caked on mud, etc."></textarea>
+          <textarea id="condition" placeholder="E.g., Excessive pet hair, heavy stains, caked on mud, etc."></textarea>
         </div>
         <div>
           <label for="postal_code">ZIP code <span class="req">*</span></label>
-          <input type="text" id="postal_code" name="Postal Code" placeholder="ZIP code" inputmode="numeric" autocomplete="postal-code" required>
+          <input type="text" id="postal_code" placeholder="ZIP code" inputmode="numeric" autocomplete="postal-code" required>
         </div>
-        <label class="consent"><input type="checkbox" id="non_marketing_consent" name="SMS consent (non-marketing)" value="yes"> <span id="non_marketing_wording">By checking this box, I consent to receive non-marketing text messages from <strong>Detling's Detailing LLC</strong> at the phone number provided. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
-        <label class="consent"><input type="checkbox" id="marketing_consent" name="SMS consent (marketing)" value="yes"> <span id="marketing_wording">By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new service updates among others, from <strong>Detling's Detailing LLC</strong> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
+        <label class="consent"><input type="checkbox" id="non_marketing_consent" value="yes"> <span id="non_marketing_wording">By checking this box, I consent to receive non-marketing text messages from <strong>Detling's Detailing LLC</strong> at the phone number provided. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
+        <label class="consent"><input type="checkbox" id="marketing_consent" value="yes"> <span id="marketing_wording">By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, new service updates among others, from <strong>Detling's Detailing LLC</strong> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span></label>
         <div id="quote-turnstile" aria-label="Security check" style="margin:16px 0;"></div>
-        <button type="submit" id="quote-submit" class="btn btn-red" disabled>Submit request</button>
+        <button type="submit" id="quote-submit" class="btn btn-red" disabled>Loading…</button>
         <p class="legal"><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
         </fieldset>
       </form>

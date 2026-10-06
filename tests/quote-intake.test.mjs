@@ -78,7 +78,9 @@ function harness(module, overrides = {}) {
 test("the page cannot submit natively and shows a contact fallback if scripts fail", () => {
   assert.doesNotMatch(quoteHtml, /<form[^>]+method=["']POST["']/i);
   assert.doesNotMatch(quoteHtml, /<form[^>]+action=["']https:\/\/api\.web3forms\.com/i);
+  assert.doesNotMatch(quoteHtml, /<fieldset[^>]+id=["']quote-fields["'][^>]+disabled/i);
   assert.match(quoteHtml, /id=["']quote-fallback["'][^>]+hidden/i);
+  assert.match(quoteHtml, /id=["']quote-submit["'][^>]+disabled[^>]*>Loading…<\/button>/i);
   assert.match(quoteHtml, /<script[^>]+src=["']\/quote-intake\.js["']/i);
   assert.match(quoteHtml, /href=["']tel:\+15134449924["']/);
   assert.match(quoteHtml, /contact@detlingsdetailing\.com/);
@@ -92,6 +94,8 @@ test("the contact fallback stays hidden after startup and appears if startup fai
   const started = await module.startQuoteForm({ button, fallback, createFlow: async () => ({ submit: async () => ({ kind: "saved" }) }) });
   assert.equal(started.ready, true);
   assert.equal(fallback.hidden, true);
+  assert.equal(button.disabled, false);
+  assert.equal(button.textContent, "Submit request");
 
   const failed = await module.startQuoteForm({ button, fallback, createFlow: async () => { throw new Error("Turnstile failed"); } });
   assert.equal(failed.ready, false);
