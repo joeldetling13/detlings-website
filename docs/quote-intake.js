@@ -1,9 +1,9 @@
-// Website quote intake configuration. Replace the email key before publishing; use the test widget key for practice hosts.
+// Website quote intake configuration. Use a test widget key for practice hosts.
 // Web3Forms sends to the inbox attached to its access key; visitors cannot choose a recipient.
 export const QUOTE_CONFIG = Object.freeze({
   crmEndpoint: "https://detlings-crm.netlify.app/api/public/quote-requests",
   turnstileSiteKey: "0x4AAAAAAFO2QbS9b69Q0r6Y", // production widget, hostname detlingsdetailing.com
-  web3formsAccessKey: "REPLACE_WITH_VERIFIED_WEB3FORMS_ACCESS_KEY",
+  web3formsAccessKey: "631dba7f-f640-455d-954d-926073a473f3", // same public key the old form used; sends to contact@detlingsdetailing.com
   web3formsEndpoint: "https://api.web3forms.com/submit",
 });
 
